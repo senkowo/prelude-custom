@@ -1,9 +1,8 @@
 ;;; additional configs for evil
+;;; (configs needed for evil before it loads are in
+;;;  preload/evil-collection-prereq.el).
 
 ;;; tweak evil a little
-
-(setq evil-want-C-u-scroll t
-      evil-respect-visual-line-mode t)
 
 (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
 (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)

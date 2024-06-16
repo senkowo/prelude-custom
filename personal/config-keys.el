@@ -1,6 +1,11 @@
 ;; generic keybind-related stuff
 
-;; function to switch focus to the last window
+;; function to open the prelude personal config dir
+(defun my/open-prelude-personal-dir ()
+  (interactive)
+  (dired prelude-personal-dir))
+
+;; function to switch focus to the last focused window
 (defun my/switch-to-last-window ()
   (interactive)
   (let ((win (get-mru-window t t t)))
@@ -8,11 +13,6 @@
     (let ((frame (window-frame win)))
       (select-frame-set-input-focus frame)
       (select-window win))))
-
-;; function to open the prelude personal config dir
-(defun my/open-prelude-personal-dir ()
-  (interactive)
-  (dired prelude-personal-dir))
 
 ;; create leader-key binds using function from preload/leader-key-definer.el
 (leader-keybind
