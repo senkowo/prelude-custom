@@ -1,6 +1,6 @@
 ;; generic keybind-related stuff
 
-;; custom function to switch focus to the last window
+;; function to switch focus to the last window
 (defun my/switch-to-last-window ()
   (interactive)
   (let ((win (get-mru-window t t t)))
@@ -9,6 +9,11 @@
       (select-frame-set-input-focus frame)
       (select-window win))))
 
+;; function to open the prelude personal config dir
+(defun my/open-prelude-personal-dir ()
+  (interactive)
+  (dired prelude-personal-dir))
+
 ;; create leader-key binds using function from preload/leader-key-definer.el
 (leader-keybind
   ;; files
@@ -16,6 +21,7 @@
   "ff" '(find-file :which-key "find file")
   "fr" '(recentf :which-key "recent files")
   "fj" '(dired-jump :which-key "dired jump")
+  "fp" '(my/open-prelude-personal-dir :which-key "open personal config dir")
   ;; dired stuff (the same stuff for convenience)
   "d" '(:ignore t :which-key "dired")
   "dd" '(find-file :which-key "find file")
@@ -30,6 +36,8 @@
   "bo" '(crux-switch-to-previous-buffer :which-key "last buffer")
   "bn" '(next-buffer :which-key "next buffer")
   "bp" '(previous-buffer :which-key "next buffer")
+  "bk" '(kill-current-buffer :which-key "kill this buffer")
+  "bK" '(kill-buffer :which-key "kill buffer")
   ;; magit (version control)
   "v" 'magit
   ;; windows
