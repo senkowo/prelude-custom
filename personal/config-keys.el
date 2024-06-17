@@ -47,7 +47,10 @@
   "wd" '(delete-window :which-key "delete window")
   "wD" '(delete-other-windows :which-key "delete other windows")
   "ww" '(my/switch-to-last-window :which-key "last window")
-  "wo" '(my/switch-to-last-window :which-key "last window"))
+  "wo" '(my/switch-to-last-window :which-key "last window")
+  ;; programs
+  "a" '(:ignore t :which-key "applications")
+  "at" 'vterm)
 
 ;; "M-o" by default runs crux-smart-open-line as per the prelude-mode-map,
 ;; which isn't so useful so set it to a window-switching command instead.

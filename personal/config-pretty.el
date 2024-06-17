@@ -47,7 +47,9 @@
 ;; even prettier modeline
 (use-package doom-modeline
   :ensure t
-  :init (doom-modeline-mode 1))
+  :init (doom-modeline-mode 1)
+  :config
+  (setq doom-modeline-height 25))
 
 ;; dashboard
 (use-package dashboard
