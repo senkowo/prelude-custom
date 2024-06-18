@@ -1,9 +1,12 @@
 ;;; configs for dired
 
+;;; dired improvements
+
 ;; add features in ranger missing in dired
 (use-package dired-ranger
   :ensure t)
 
+;; icons
 (use-package all-the-icons-dired
   :ensure t)
 
