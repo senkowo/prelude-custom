@@ -18,6 +18,6 @@
 ;; dired configs
 (use-package dired
   :ensure nil
-  :hook (dired-mode . my/dired-init-hook))
+  :hook (dired-mode . my/dired-mode-hook))
 
 ;;
